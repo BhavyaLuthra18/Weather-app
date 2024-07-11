@@ -1,9 +1,13 @@
 "use client";
 
 import Image from "next/image";
+
 import axios from "axios";
+
 import { useState, useEffect } from "react";
+
 import { BiSearch } from "react-icons/bi";
+
 import Weather from "@/components/Weather";
 
 export default function Home() {
@@ -15,6 +19,8 @@ export default function Home() {
 
   const fetchWeather = async (e) => {
     e.preventDefault();
+
+    // Check if the city input is not empty after trimming whitespace
     if (!city.trim()) {
       SetWeather(null);
       return;
@@ -23,15 +29,14 @@ export default function Home() {
     try {
       const response = await axios.get(url);
       SetWeather(response.data);
-      // console.log(response.data);
     } catch (error) {
       console.log("Error fetching weather data:", error);
       SetWeather(null);
     }
-
     setLoading(false);
   };
 
+  // useEffect to reset weather state whether the city state changes
   useEffect(() => {
     SetWeather(null);
   }, [city]);
