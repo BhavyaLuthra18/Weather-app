@@ -36,7 +36,7 @@ export default function Home() {
     setLoading(false);
   };
 
-  // useEffect to reset weather state whether the city state changes
+  // useEffect to reset weather state whenever the city state changes
   useEffect(() => {
     SetWeather(null);
   }, [city]);
