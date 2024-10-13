@@ -56,10 +56,9 @@ export default function Home() {
         {/* Search */}
         <div className="relative flex justify-between items-center max-w-[280px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[400px] w-full m-auto text-white z-10 pt-4">
           {" "}
-          {/* Added pt-4 for spacing */}
           <form
             onSubmit={fetchWeather}
-            className="flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-xl"
+            className="flex justify-between items-center w-full m-auto p-2 bg-transparent border border-gray-300 text-white rounded-xl"
           >
             <input
               onChange={(e) => setCity(e.target.value)}
@@ -74,9 +73,8 @@ export default function Home() {
         </div>
 
         {/* Weather */}
-        <div className="flex-grow flex items-center justify-center pt-8">
+        <div className="flex-grow flex items-center justify-center">
           {" "}
-          {/* Added flex-grow and pt-8 to adjust positioning */}
           {city.trim() && weather && weather.weather ? (
             <Weather data={weather} />
           ) : null}
