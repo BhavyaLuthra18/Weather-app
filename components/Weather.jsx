@@ -4,7 +4,7 @@ import React from "react";
 const Weather = ({ data }) => {
   return (
     <>
-      <div className="relative flex flex-col justify-between max-w-[400px] max-h-[800px]  w-full   text-gray-300 z-10 ">
+      <div className="relative flex flex-col justify-between max-w-[400px] max-h-[800px]  overflow-hidden w-full  text-gray-300 z-10 ">
         {/*Top*/}
         <div className="relative flex justify-between mb-16">
           <div className="flex flex-col items-center">
